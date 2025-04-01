@@ -1,0 +1,117 @@
+@use '../../../styles.scss' as *;
+
+// Conteneur principal
+.container {
+  max-width: 1200px;
+}
+
+// Style pour les images
+.activity-image {
+  max-height: 300px;
+  width: 100%;
+  object-fit: cover; // S'assure que l'image remplit l'espace sans déformation
+  border-bottom: 1px solid $color_border_03;
+}
+
+// Style pour les cartes
+.card {
+  border: 1px solid $color_border_03;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  .card-body {
+    padding: 15px;
+    background-color: $color_background_01;
+
+    .card-text {
+      font-size: 1rem;
+      color: $color_text_02;
+      margin-bottom: 0;
+      @media (max-width: 576px) {
+        font-size: 0.95rem;
+      }
+    }
+
+    // Style pour le bouton "Agrandir"
+    .btn-primary {
+      background-color: $color_button_classic;
+      border: none;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: $color_button_classic_hover;
+      }
+
+      i {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+// Style pour la modale et l'image agrandie
+#imageModal {
+  .modal-dialog {
+    max-width: 90vw; // Limite la largeur à 90% de la viewport
+    @media (max-width: 576px) {
+      max-width: 95vw; // Plus large sur mobile
+      margin: 0.5rem;
+    }
+  }
+
+  .modal-content {
+    border-radius: 8px;
+
+    .modal-header {
+      background-color: $color_background_03;
+      color: $color_background_01; // Texte blanc pour contraste
+    }
+
+    .modal-body {
+      padding: 15px;
+
+      .enlarged-image {
+        max-width: 100%;
+        max-height: 70vh; // Limite la hauteur pour éviter de dépasser l'écran
+        width: auto;
+        height: auto;
+        object-fit: contain; // S'assure que l'image entière est visible
+      }
+    }
+
+    .modal-footer {
+      border-top: none;
+
+      .btn-secondary {
+        background-color: $color_button_annulation;
+        border: none;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: $color_button_annulation_hover;
+        }
+      }
+    }
+  }
+}
+
+// Style pour la mention de propriété
+.text-muted {
+  font-size: 0.9rem;
+  color: $color_text_02;
+}
+
+// Style pour le lien de retour
+.btn-link {
+  color: $color_text_01;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

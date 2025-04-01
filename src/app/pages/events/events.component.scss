@@ -1,0 +1,178 @@
+// Importer le module sass:color pour utiliser color.adjust
+@use 'sass:color';
+
+// Importer les variables globales
+@use '../../../styles.scss' as *;
+
+// Conteneur principal
+.container {
+  max-width: 1200px;
+}
+
+// Logo
+.logo {
+  max-width: 150px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+// Style pour le titre principal
+.title-primary {
+  h1 {
+    font-size: 2.5rem;
+    @media (max-width: 576px) {
+      font-size: 1.8rem;
+    }
+  }
+  p {
+    font-size: 1.1rem;
+    @media (max-width: 576px) {
+      font-size: 0.9rem;
+    }
+  }
+}
+
+// Style pour les cartes
+.card {
+  border-radius: 8px;
+  .card-header {
+    background-color: $color_background_03; // Utilisation de la variable pour la couleur de fond
+    color: $color_background_01; // Texte blanc pour contraste
+  }
+  .card-body {
+    ul.list-group {
+      li.list-group-item {
+        border: none;
+        padding: 0.5rem 0;
+      }
+    }
+  }
+}
+
+// Style pour la section "Messages aux coachs"
+.coach-messages {
+  .card-header {
+    background-color: $color_background_03;
+    color: $color_background_01; // Texte blanc pour contraste
+    padding: 15px 20px;
+    border-bottom: none;
+    border-radius: 8px 8px 0 0;
+
+    h2 {
+      font-size: 1.6rem;
+      font-weight: 600;
+      @media (max-width: 576px) {
+        font-size: 1.4rem;
+      }
+
+      i {
+        font-size: 1.3rem;
+        color: $color_background_01;
+      }
+    }
+  }
+
+  .card-body {
+    padding: 20px;
+
+    .lead {
+      font-size: 1.1rem;
+      color: $color_text_01;
+      margin-bottom: 20px;
+      @media (max-width: 576px) {
+        font-size: 1rem;
+      }
+    }
+
+    .list-group-item {
+      border: none;
+      padding: 10px 0;
+      font-size: 1rem;
+      color: $color_text_02;
+      line-height: 1.6;
+
+      @media (max-width: 576px) {
+        font-size: 0.95rem;
+      }
+
+      i {
+        font-size: 1.2rem;
+        color: $color_border_03;
+        margin-top: 4px;
+      }
+
+      .highlight {
+        font-weight: bold;
+        color: $color_text_01;
+      }
+
+      .highlight-time {
+        font-weight: bold;
+        color: $color_button_classic;
+      }
+    }
+  }
+}
+
+// Style pour l'image du plan (version miniature)
+.stadium-plan {
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+  &:hover {
+    transform: scale(1.02);
+  }
+  @media (max-width: 576px) {
+    max-width: 100%;
+  }
+}
+
+// Style pour la modale et l'image en grand
+#planModal {
+  .modal-dialog {
+    max-width: 90vw; // Limite la largeur à 90% de la viewport
+    @media (max-width: 576px) {
+      max-width: 95vw; // Plus large sur mobile
+      margin: 0.5rem;
+    }
+  }
+  .modal-content {
+    border-radius: 8px;
+    .modal-header {
+      background-color: $color_background_03; // Utilisation de la variable pour la couleur de fond
+      color: $color_background_01; // Texte blanc pour contraste
+    }
+    .modal-body {
+      padding: 0;
+      .full-screen-plan {
+        max-width: 100%;
+        max-height: 70vh; // Limite la hauteur pour éviter de dépasser l’écran
+        width: auto;
+        height: auto;
+        object-fit: contain; // S’assure que l’image reste proportionnelle
+        @media (max-width: 576px) {
+          max-height: 60vh; // Réduit la hauteur sur mobile
+        }
+      }
+    }
+    .modal-footer {
+      border-top: none;
+      .btn-secondary {
+        background-color: $color_button_annulation; // Utilisation de la variable pour le bouton "Fermer"
+        border: none;
+        &:hover {
+          background-color: color.adjust($color_button_annulation, $lightness: -10%); // Remplace darken par color.adjust
+        }
+      }
+    }
+  }
+}
+
+// Style pour le bouton WhatsApp
+.btn-success {
+  background-color: $color_button_validation; // Utilisation de la variable pour le bouton WhatsApp
+  border: none;
+  &:hover {
+    background-color: color.adjust($color_button_validation, $lightness: -10%); // Remplace darken par color.adjust
+  }
+}

@@ -1,0 +1,79 @@
+<div class="container">
+    <h2>Liste des Tests</h2>
+  
+    <!-- Formulaire pour ajouter un test -->
+    <div class="add-form">
+      <h3>Ajouter un test</h3>
+      <form (ngSubmit)="onAddTest()">
+        <div class="form-group">
+          <label for="name">Nom du test :</label>
+          <input
+            id="name"
+            [(ngModel)]="newTest.name"
+            name="name"
+            placeholder="Nom du test"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="description">Description :</label>
+          <input
+            id="description"
+            [(ngModel)]="newTest.description"
+            name="description"
+            placeholder="Description"
+            required
+          />
+        </div>
+        <button type="submit">Ajouter</button>
+      </form>
+    </div>
+  
+    <!-- Liste des tests -->
+    <div class="tests-list">
+      <div *ngIf="tests.length === 0" class="no-tests">
+        Aucun test disponible.
+      </div>
+      <ul>
+        <li *ngFor="let test of tests">
+          <!-- Affichage normal -->
+          <div *ngIf="editingTest?.id !== test.id" class="test-item">
+            <span>{{ test.name }} - {{ test.description }}</span>
+            <div class="actions">
+              <button (click)="onEdit(test)">Modifier</button>
+              <button (click)="onDelete(test.id)">Supprimer</button>
+            </div>
+          </div>
+  
+          <!-- Formulaire pour modifier un test -->
+          <div *ngIf="editingTest && editingTest.id === test.id" class="edit-form">
+            <form (ngSubmit)="onUpdateTest()">
+              <div class="form-group">
+                <label for="editName">Nom du test :</label>
+                <input
+                  id="editName"
+                  [(ngModel)]="editingTest.name"
+                  name="editName"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="editDescription">Description :</label>
+                <input
+                  id="editDescription"
+                  [(ngModel)]="editingTest.description"
+                  name="editDescription"
+                  required
+                />
+              </div>
+              <button type="submit">Enregistrer</button>
+              <button type="button" (click)="cancelEdit()">Annuler</button>
+            </form>
+          </div>
+        </li>
+      </ul>
+    </div>
+  
+    <!-- Message d'erreur -->
+    <p *ngIf="error" class="error">{{ error }}</p>
+  </div>

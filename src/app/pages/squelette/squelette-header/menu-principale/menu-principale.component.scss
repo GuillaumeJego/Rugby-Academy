@@ -1,0 +1,114 @@
+@use '../../../../../styles.scss' as *;
+
+// Style de la navbar
+.navbar {
+  background-color: $color_background_03; /* Fond foncé (#031420) */
+  padding: 0.5rem 1rem; /* Espacement interne */
+}
+
+
+// Style des liens de la navbar
+.text {
+  color: $color_text_03; /* Couleur par défaut des liens (#1ebde8) */
+  transition: color 0.3s ease; /* Transition fluide */
+}
+
+.text:hover {
+  color: $color_level_02; /* Couleur au survol (#92a6b2) */
+}
+
+// Style pour le lien actif
+.nav-link.active {
+  color: $color_level_04 !important; /* Couleur pour l'onglet actif (#f1f5f6) */
+  font-weight: bold;
+}
+
+// Style pour le bouton toggler (desktop)
+.navbar-toggler {
+  border-color: $color_text_03;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%231ebde8' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+// Style pour le bouton "Menu" sur mobile
+.menu-toggle {
+  border-color: $color_text_03;
+  color: $color_text_03;
+  font-weight: bold;
+}
+
+.menu-toggle:hover {
+  background-color: $color_level_05;
+  color: $color_text_01;
+}
+
+// Style pour le menu déroulant sur mobile
+.mobile-menu {
+  display: none; /* Caché par défaut */
+  position: absolute;
+  top: 100%; /* Juste en dessous de la navbar */
+  left: 0;
+  right: 0;
+  background-color: $color_background_03; /* Fond foncé (#031420) */
+  z-index: 1000; /* Au-dessus des autres éléments */
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  // width: 40vw;
+  width: 120%;
+}
+
+.mobile-menu.show {
+  display: block; /* Affiché lorsque la classe "show" est ajoutée */
+}
+
+.mobile-menu-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* Espacement entre les liens */
+}
+
+.mobile-menu .nav-link {
+  color: $color_text_03; /* Texte bleu clair (#1ebde8) */
+  text-align: center;
+  padding: 0.5rem 0;
+}
+
+.mobile-menu .nav-link:hover {
+  color: $color_level_02; /* Couleur au survol (#92a6b2) */
+}
+
+.mobile-menu .nav-link.active {
+  color: $color_level_04 !important; /* Couleur pour l'onglet actif (#f1f5f6) */
+  font-weight: bold;
+}
+
+// Ajustements pour mobile
+@media (max-width: 390px) {
+  #text-menu-id {
+    display: none !important; /* Toujours caché sur desktop */
+  }
+
+  #logo-menu-id {
+   padding: 0!important;
+   margin: 0!important;
+  }
+
+  #navbar-toggler-icon-id {
+   padding: 0!important;
+   margin: 0!important;
+  }
+}
+
+// Ajustements pour desktop
+@media (min-width: 992px) {
+  .mobile-menu {
+    display: none !important; /* Toujours caché sur desktop */
+  }
+
+  #navbar-toggler-icon-id{
+    display: none !important; /* Toujours caché sur desktop */
+  }  
+}

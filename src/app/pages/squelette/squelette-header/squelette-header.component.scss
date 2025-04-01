@@ -1,0 +1,68 @@
+@use '../../../../styles.scss' as *;
+
+// Style de l'entête principale
+.main {
+  background-color: $color_background_03; /* Fond foncé (#031420) */
+  color: $color_text_03; /* Texte bleu clair (#1ebde8) */
+  padding: 0.5rem 1rem;
+  height: 60px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+// Conteneur pour le contenu
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+// Ajustements des largeurs des éléments enfants
+#logoId,
+#loginId {
+  width: 20vw;
+  display: flex;
+  align-items: center;
+}
+
+#mainMenuId {
+  width: 60vw;
+  display: flex;
+  justify-content: center; /* Centre le menu */
+}
+
+// Ajustements pour mobile
+@media (max-width: 576px) {
+  // #logoId,
+  // #loginId {
+  //   width: 30vw;
+  // }
+
+  // #mainMenuId {
+  //   width: 40vw;
+  // }
+
+  // .main {
+  //   height: 50px;
+  //   padding: 0.5rem;
+  // }
+}
+
+// Ajustements pour desktop (grands écrans)
+@media (min-width: 992px) {
+  #logoId {
+    // display: none; /* Masque le logo sur desktop */
+  }
+
+  #loginId {
+    width: 15vw;
+  }
+
+  #mainMenuId {
+    width: 85vw; /* Plus d'espace pour le menu puisque le logo est masqué */
+  }
+}
