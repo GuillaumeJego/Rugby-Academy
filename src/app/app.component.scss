@@ -1,0 +1,26 @@
+// @use '../styles.scss' as *;
+
+.content {
+    display: flex; /* Utilise Flexbox */
+    flex-direction: column; /* Aligne les éléments en colonne */
+    min-height: 100vh; /* Hauteur minimale = 100% de la fenêtre */
+  }
+  
+  .header {
+    position: sticky; /* Garde le header en haut */
+    top: 0; /* Fixe au sommet */
+    z-index: 1000; /* Assure qu'il reste au-dessus des autres éléments */
+    /* Ajoute un style optionnel, ex. : background, padding, etc. */
+  }
+  
+  .main {
+    flex: 1; /* Permet au main de prendre tout l'espace disponible */
+    /* Optionnel : ajoute un min-height si besoin */
+  }
+  
+  .footer {
+    position: sticky; /* Garde le footer en bas */
+    bottom: 0; /* Fixe en bas */
+    z-index: 1000; /* Assure qu'il reste au-dessus si nécessaire */
+    /* Ajoute un style optionnel, ex. : background, padding, etc. */
+  }

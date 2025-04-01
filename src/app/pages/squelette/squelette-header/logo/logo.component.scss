@@ -1,0 +1,48 @@
+@use '../../../../../styles.scss' as *;
+
+// Style du conteneur principal du logo
+.main {
+  display: flex;
+  align-items: center;
+}
+
+a {
+  color: $color_text_03; /* Texte bleu clair (#1ebde8) */
+//   font-size: 4vw; /* Taille proportionnelle à la largeur de la page */
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: $color_level_02; /* Couleur au survol (#92a6b2) */
+}
+
+
+// Style du logo
+.logo {
+    height: 50px; /* Ajuste la taille du logo */
+    width: auto;
+  }
+
+// Ajustements pour mobile
+@media (max-width: 576px) {
+//   a {
+//     font-size: 4vw; /* Taille plus grande sur mobile pour lisibilité */
+//   }
+
+//   img {
+//     width: 4vw; /* Ajuste la taille de l'image sur mobile */
+//   }
+}
+
+// Ajustements pour desktop (grands écrans)
+@media (min-width: 1200px) {
+//   a {
+//     // font-size: 3vw; /* Taille réduite sur grands écrans pour éviter un texte trop grand */
+//   }
+
+//   img {
+//     width: 1.5vw;
+//   }
+}

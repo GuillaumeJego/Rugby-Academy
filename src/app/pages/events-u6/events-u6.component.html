@@ -1,0 +1,80 @@
+<div class="container mt-5">
+  <!-- Titre de la page -->
+  <h2 class="text-center mb-4">
+    <i class="bi bi-balloon-fill me-2"></i> Activités des U6
+  </h2>
+
+  <!-- Grille des images -->
+  <div class="row row-cols-1 row-cols-md-2 g-4">
+    <div *ngFor="let image of activityImages" class="col">
+      <div class="card h-100">
+        <img [src]="image.src" [alt]="image.alt" class="card-img-top activity-image">
+        <div class="card-body">
+          <p class="card-text text-center">{{ image.caption }}</p>
+          <!-- Bouton pour agrandir l'image -->
+          <div class="text-center mt-3">
+            <button class="btn btn-primary btn-sm" (click)="openImageModal(image)">
+              <i class="bi bi-zoom-in me-2"></i>Agrandir
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mention de propriété -->
+  <div class="text-center mt-4">
+    <p class="text-muted small">
+      Toutes les images sont la propriété de CD22. © CD22 2025.
+    </p>
+  </div>
+
+  <!-- Modale pour afficher l'image en grand -->
+  <div
+    class="modal fade"
+    id="imageModal"
+    tabindex="-1"
+    aria-labelledby="imageModalLabel"
+    aria-hidden="true"
+    role="dialog"
+  >
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="imageModalLabel">
+            {{ selectedImage?.caption }}
+          </h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <div class="text-center">
+            <img
+              *ngIf="selectedImage?.src"
+              [src]="selectedImage?.src"
+              [alt]="selectedImage?.alt"
+              class="img-fluid enlarged-image"
+            >
+          </div>
+        </div>
+        <div class="modal-footer">
+          <p class="text-muted small me-auto">Propriété de CD22. © CD22 2025.</p>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+            Fermer
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lien de retour -->
+  <div class="card-body text-center">
+    <a routerLink="/events" class="btn btn-primary">
+      <i class="bi bi-eye me-2"></i> Retour sur l'événement.
+    </a>
+  </div>
+</div>

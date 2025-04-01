@@ -1,0 +1,11 @@
+@use '../../../../styles.scss' as *;
+
+.base {
+    background-color: $color_background_01;
+    color: $color_text_02;
+    min-height: 100vh; /* Assure que le conteneur prend toute la hauteur de la fenêtre */
+    margin: 0; /* Supprime toute marge */
+    padding: 0; /* Supprime tout padding */
+    display: flex; /* Utilise flexbox pour centrer le contenu */
+    flex-direction: column; /* Aligne les enfants en colonne */
+}

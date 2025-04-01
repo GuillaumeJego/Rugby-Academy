@@ -1,1 +1,51 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0; /* Ajoute ceci pour supprimer tout padding par défaut */
+    box-sizing: border-box; /* Assure que les paddings/marges n'augmentent pas la taille */
+}
+
+* {
+    box-sizing: inherit; /* Applique box-sizing à tous les éléments */
+}
+  
 /* You can add global styles to this file, and also import other style files */
+// Base graphique
+
+//Base graphique squelette Metana
+
+$color_level-01 : #010306;
+$color_level-02 : #92a6b2;
+$color_level-03 : #0b2031;
+$color_level-04 : #f1f5f6;
+$color_level-05 : #1ebde8;
+$color_level-06 : #075886;
+$color_level-07 : #506370;
+$color_level-08 : #031420;
+
+$color_border_01 : #031420;
+$color_border_02 : #075886;
+$color_border_03 : #1ebde8;
+$color_background_01 : #f1f5f6;
+$color_background_02 : #506370;
+$color_background_03 : #031420;
+$color_text_01 : #031420;
+$color_text_02 : #075886;
+$color_text_03 : #1ebde8;
+$color_button_classic : #1ebde8;
+$color_button_validation : #075886;
+$color_button_annulation : #1ebde8;
+$color_button_edit : #ffc107;
+$color_button_delete : #dc3545;
+$color_button_classic_hover : #0a426b;
+$color_button_validation_hover : #1091db;
+$color_button_annulation_hover : #5ddcff;
+$color_button_edit_hover : #6b5103;
+$color_button_delete_hover : #5f181f;
+
+//Code couleur pour les actions possibles des personnes connectées
+$color_action_possible: #00FFE0;
+
+// Code couleur pour les commentaires cachés
+$color_hidden_from_users: #FA00FF;
+
