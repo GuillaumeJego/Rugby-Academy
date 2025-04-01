@@ -1,0 +1,115 @@
+@use '../../../styles.scss' as *;
+
+// Style pour la timeline
+.timeline-section {
+  h2 {
+    font-size: 1.8rem;
+    @media (max-width: 576px) {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.timeline {
+  position: relative;
+  padding: 20px 0;
+  margin: 0 auto;
+  max-width: 700px; // Légèrement plus large pour accueillir l’alternance
+
+  // Ligne verticale centrale
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 4px;
+    background-color: $color_border_03;
+    transform: translateX(-50%);
+    @media (max-width: 576px) {
+      left: 20px; // Repositionne la ligne à gauche sur mobile
+    }
+  }
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: flex-start;
+
+  // Position par défaut (heure à gauche, contenu à droite)
+  &.left {
+    flex-direction: row;
+
+    .timeline-time {
+      width: 100px;
+      text-align: right;
+      padding-right: 20px;
+      @media (max-width: 576px) {
+        width: 60px;
+        padding-right: 15px;
+      }
+    }
+
+    .timeline-content {
+      margin-left: 20px;
+      text-align: left;
+    }
+  }
+
+  // Position alternée (heure à droite, contenu à gauche)
+  &.right {
+    flex-direction: row-reverse;
+
+    .timeline-time {
+      width: 100px;
+      text-align: left;
+      padding-left: 20px;
+      @media (max-width: 576px) {
+        width: 60px;
+        padding-left: 15px;
+      }
+    }
+
+    .timeline-content {
+      margin-right: 20px;
+      text-align: right;
+    }
+  }
+
+  .timeline-time {
+    font-weight: bold;
+    color: $color_text_02;
+    font-size: 1.1rem;
+    @media (max-width: 576px) {
+      font-size: 1rem;
+    }
+  }
+
+  .timeline-content {
+    flex: 1;
+    background-color: $color_background_01;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+    .timeline-title {
+      font-size: 1.2rem;
+      color: $color_text_01;
+      margin-bottom: 5px;
+      @media (max-width: 576px) {
+        font-size: 1.1rem;
+      }
+    }
+
+    .timeline-description {
+      font-size: 0.95rem;
+      color: $color_text_02;
+      margin: 0;
+      @media (max-width: 576px) {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}

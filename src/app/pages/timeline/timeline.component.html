@@ -1,0 +1,18 @@
+<div class="timeline-section mt-5">
+  <h2 class="text-center mb-4">
+    <i class="bi bi-clock me-2"></i> Déroulement de la journée
+  </h2>
+  <div class="timeline">
+    <div
+      *ngFor="let event of timeline; let i = index"
+      class="timeline-item"
+      [ngClass]="i % 2 === 0 ? 'left' : 'right'"
+    >
+      <div class="timeline-time">{{ event.time }}</div>
+      <div class="timeline-content">
+        <h5 class="timeline-title">{{ event.title }}</h5>
+        <p class="timeline-description">{{ event.description }}</p>
+      </div>
+    </div>
+  </div>
+</div>
