@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 // import { RouterOutlet } from '@angular/router';
 import { SqueletteHeaderComponent } from './pages/squelette/squelette-header/squelette-header.component';
 import { FormsModule } from '@angular/forms';
@@ -19,10 +19,14 @@ import { SqueletteFooterComponent } from './pages/squelette/squelette-footer/squ
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'rugby-academy';
   
-  onClick(route: string) {
-    console.log(`Clic détecté sur ${route}`);
+  ngOnInit() {
+    // Vérifier si on est sur metana.fr sans www
+    if (window.location.hostname === 'metana.fr') {
+      console.log('Redirection vers www.metana.fr');
+      window.location.href = 'https://www.metana.fr' + window.location.pathname;
+    }
   }
 }
