@@ -17,13 +17,20 @@
       <p>
         Notre ambition : favoriser la collaboration, l’innovation et la visibilité dans un environnement élégant, moderne et accessible.
       </p>
-      <!-- <a href="#" class="btn btn-primary btn-lg mt-3">
-        En savoir plus
-      </a> -->
-      
+
       <h3>Guillaume JEGO</h3>
     </div>
   </div>
+
+  <div *ngIf="authService.isAuthenticated(); else notLoggedIn">
+    <p>Bienvenue, {{ authService.getUserRole() }} !</p>
+    <div *ngIf="authService.getUserRole() === 'admin'">
+      <button>Action réservée aux admins</button>
+    </div>
+  </div>
+  <ng-template #notLoggedIn>
+    <p>.</p>
+  </ng-template>
 
   <hr class="my-5" />
 
