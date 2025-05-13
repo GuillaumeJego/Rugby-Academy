@@ -1,0 +1,69 @@
+@use 'sass:color';
+@use '../../../styles.scss' as *;
+
+.container {
+  max-width: 1200px;
+}
+
+.logo {
+  max-width: 150px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.title-primary {
+  h1 {
+    font-size: 2.5rem;
+    @media (max-width: 576px) {
+      font-size: 1.8rem;
+    }
+  }
+  p {
+    font-size: 1.1rem;
+    @media (max-width: 576px) {
+      font-size: 0.9rem;
+    }
+  }
+}
+
+.card {
+  border-radius: 8px;
+  .card-header {
+    background-color: $color_background_03;
+    color: $color_background_01;
+  }
+  .card-body {
+    .row {
+      .card {
+        transition: transform 0.3s ease;
+        &:hover {
+          transform: scale(1.02);
+        }
+      }
+    }
+    ul.list-group {
+      li.list-group-item {
+        border: none;
+        padding: 0.5rem 0;
+      }
+    }
+  }
+}
+
+.btn-success {
+  background-color: $color_button_validation;
+  border: none;
+  &:hover {
+    background-color: color.adjust($color_button_validation, $lightness: -10%);
+  }
+}
+
+.highlight {
+  font-weight: bold;
+  color: $color_text_01;
+}
+
+.highlight-text {
+  font-weight: bold;
+  color: $color_button_classic;
+}

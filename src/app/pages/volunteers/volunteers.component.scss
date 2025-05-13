@@ -1,0 +1,142 @@
+@use 'sass:color';
+@use '../../../styles.scss' as *;
+
+.container {
+  max-width: 1200px;
+}
+
+.logo {
+  max-width: 150px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.title-primary {
+  h1 {
+    font-size: 2.25rem;
+    @media (max-width: 576px) {
+      font-size: 1.5rem;
+    }
+  }
+  p {
+    font-size: 1rem;
+    @media (max-width: 576px) {
+      font-size: 0.85rem;
+    }
+  }
+}
+
+.card {
+  border-radius: 8px;
+  .card-header {
+    background-color: $color_background_03;
+    color: $color_background_01;
+    h2 {
+      font-size: 1.5rem;
+      @media (max-width: 576px) {
+        font-size: 1.25rem;
+      }
+    }
+  }
+  .card-body {
+    .stands-list {
+      .stand-item {
+        .card {
+          transition: transform 0.3s ease;
+          &:hover {
+            transform: scale(1.02);
+          }
+          .stand-info {
+            flex: 0 0 30%;
+            @media (max-width: 576px) {
+              flex: 0 0 100%;
+            }
+            h3 {
+              font-size: 1.1rem;
+              margin-bottom: 0.5rem;
+              @media (max-width: 576px) {
+                font-size: 1rem;
+              }
+            }
+            p {
+              font-size: 0.9rem;
+              color: $color_text_02;
+              @media (max-width: 576px) {
+                font-size: 0.85rem;
+              }
+            }
+          }
+          .time-slots-table {
+            flex: 1;
+            .table-responsive {
+              max-width: 100%;
+              overflow-x: auto;
+            }
+            .table.equal-columns {
+              table-layout: fixed;
+              width: 100%;
+              margin-bottom: 0;
+              font-size: 0.85rem;
+              @media (max-width: 576px) {
+                font-size: 0.75rem;
+              }
+              th, td {
+                width: 25%;
+                text-align: center;
+                vertical-align: middle;
+                padding: 0.4rem;
+                @media (max-width: 576px) {
+                  padding: 0.3rem;
+                }
+              }
+              .table-dark {
+                background-color: $color_background_03;
+                color: $color_background_01;
+                th {
+                  font-size: 0.85rem;
+                  @media (max-width: 576px) {
+                    font-size: 0.7rem;
+                  }
+                }
+              }
+              .btn-success {
+                padding: 0.2rem 0.4rem;
+                font-size: 0.75rem;
+                line-height: 1.2;
+                @media (max-width: 576px) {
+                  font-size: 0.7rem;
+                  padding: 0.15rem 0.3rem;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    p.text-center {
+      font-size: 0.9rem;
+      @media (max-width: 576px) {
+        font-size: 0.85rem;
+      }
+    }
+  }
+}
+
+.btn-success {
+  background-color: $color_button_validation;
+  border: none;
+  &:hover {
+    background-color: color.adjust($color_button_validation, $lightness: -10%);
+  }
+}
+
+/* Ensure vertical stacking on small screens */
+@media (max-width: 576px) {
+  .card-body .stand-item .card .d-flex {
+    flex-direction: column !important;
+  }
+  .stand-info {
+    margin-bottom: 1rem !important;
+    margin-right: 0 !important;
+  }
+}

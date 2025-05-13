@@ -45,14 +45,14 @@ export class TestsComponent implements OnInit {
       this.error = 'Veuillez remplir tous les champs';
       return;
     }
-
+  
     this.testService.addTest(this.newTest).subscribe({
       next: () => {
-        this.loadTests();
+        this.tests.push({ ...this.newTest, id: this.tests.length + 1 }); // Simule l'ajout local
         this.newTest = { name: '', description: '' };
       },
       error: (err) => {
-        this.error = 'Erreur lors de l\'ajout du test : ' + err.message;
+        this.error = err.message;
         console.error(err);
       }
     });
