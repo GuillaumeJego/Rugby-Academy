@@ -2,7 +2,7 @@
 
 // Définir les en-têtes pour retourner du JSON et autoriser les requêtes CORS
 header("Content-Type: application/json");
-header("Access-Control-Allow-Origin: *"); // Permet à Angular d'accéder à l'API
+// header("Access-Control-Allow-Origin: *"); // Permet à Angular d'accéder à l'API
 header("Access-Control-Allow-Methods: GET"); // Méthodes autorisées
 header("Access-Control-Allow-Headers: Content-Type");
 

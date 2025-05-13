@@ -130,7 +130,20 @@
   }
 }
 
-/* Ensure vertical stacking on small screens */
+.modal-content {
+  .form-label {
+    font-size: 0.9rem;
+  }
+  .form-control {
+    font-size: 0.85rem;
+  }
+  p {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Assurer l'empilement vertical sur les petits écrans */
 @media (max-width: 576px) {
   .card-body .stand-item .card .d-flex {
     flex-direction: column !important;
