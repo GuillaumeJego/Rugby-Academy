@@ -2,14 +2,28 @@
   <!-- Section Hero -->
   <div class="text-center mb-4 title-primary">
     <img src="/assets/images/logos/clubRugby/logo_rugby_dinan.png" alt="Logo Dinan Rugby" class="logo">
-    <h1 class="display-4 text-primary">
+    <h1 class="display-4" style="color: #dd0419;">
       <i class="bi bi-balloon-fill me-2"></i> Fête du club 2025 - Dinan Rugby
     </h1>
     <p class="lead text-muted">
       Rejoignez les bénévoles de l’Olympiade familiale du Dinan Rugby le 15 juin 2025 ! Devenez bénévole et faites de cette journée un moment inoubliable. 🏉
     </p>
   </div>
-
+  <div class="m-3 text-center">
+    <a href="https://chat.whatsapp.com/FarGcG9Wp49HzxOnpHEugm" target="_blank" class="btn btn-success">
+      Rejoindre le groupe WhatsApp des bénévoles
+    </a>
+  </div>
+  <iframe 
+    src="https://suno.com/embed/4cf1d9e5-87fe-4581-a7ce-4e25b003d3dd" 
+    width="100%" 
+    height="240" 
+    class="music-iframe"
+    title="Suno Music Track"
+    frameborder="0"
+    allow="clipboard-write">
+    <a href="https://suno.com/song/4cf1d9e5-87fe-4581-a7ce-4e25b003d3dd">Listen on Suno</a>
+  </iframe>
   <!-- Section Stands -->
   <div class="card shadow-sm mb-4">
     <div class="card-header bg-primary text-white">
@@ -22,10 +36,14 @@
             <div class="card-body d-flex flex-column flex-md-row align-items-md-start">
               <!-- Informations du stand -->
               <div class="stand-info me-md-4 mb-3 mb-md-0">
-                <h3 class="h5 text-primary">
+                <button
+                  class="stand-title-btn"
+                  (click)="openDetailModal(stand.name, stand.detail)"
+                  title="Détails"
+                >
                   <i class="{{ stand.icon }} me-2"></i>{{ stand.name }}
-                </h3>
-                <p>{{ stand.description }}</p>
+                  <p>{{ stand.description }}</p>
+                </button>
               </div>
               <!-- Tableau des créneaux -->
               <div class="time-slots-table flex-grow-1">
@@ -43,7 +61,8 @@
                       <tr>
                         <td *ngFor="let slot of timeSlots">
                           <ng-container *ngIf="getVolunteerForSlot(stand.name, slot) as volunteer">
-                            {{ volunteer.name }}
+                            {{ volunteer.name }} {{ volunteer.lastName }}
+                            <span *ngIf="volunteer.phoneNumber" class="ms-2 text-muted"> (Tél: {{ volunteer.phoneNumber }})</span>
                           </ng-container>
                           <ng-container *ngIf="!getVolunteerForSlot(stand.name, slot)">
                             Disponible
@@ -74,14 +93,14 @@
   <div class="modal fade" id="signUpModal" tabindex="-1" aria-labelledby="signUpModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
-        <div class="modal-header">
+        <div class="modal-header bg-primary">
           <h5 class="modal-title" id="signUpModalLabel">Inscription bénévole</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <form>
             <div class="mb-3">
-              <label for="volunteerName" class="form-label">Votre nom</label>
+              <label for="volunteerName" class="form-label">Votre prénom</label>
               <input
                 type="text"
                 class="form-control"
@@ -91,13 +110,60 @@
                 required
               >
             </div>
+            <div class="mb-3">
+              <label for="volunteerLastName" class="form-label">Votre nom de famille</label>
+              <input
+                type="text"
+                class="form-control"
+                id="volunteerLastName"
+                [(ngModel)]="volunteerLastName"
+                name="volunteerLastName"
+                required
+              >
+            </div>
+            <div class="mb-3">
+              <label for="volunteerPhoneNumber" class="form-label">Votre numéro de téléphone</label>
+              <input
+                type="tel"
+                class="form-control"
+                id="volunteerPhoneNumber"
+                [(ngModel)]="volunteerPhoneNumber"
+                name="volunteerPhoneNumber"
+              >
+              <small class="form-text text-muted">
+                Votre numéro ne sera pas visible sur le site. Il est utilisé uniquement pour permettre à Guillaume, responsable de l’école de rugby, de vous contacter si nécessaire pour l'évènement. Il sera supprimé des bases de données juste après l'évènement conformément à la réglementation RGPD liée aux DCP
+              </small>
+            </div>
             <p><strong>Stand :</strong> {{ selectedStand }}</p>
             <p><strong>Créneau :</strong> {{ selectedTimeSlot }}</p>
+            <div class="mt-3 text-center">
+              <a href="https://chat.whatsapp.com/FarGcG9Wp49HzxOnpHEugm" target="_blank" class="btn btn-success">
+                Rejoindre le groupe WhatsApp des bénévoles
+              </a>
+            </div>
           </form>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
           <button type="button" class="btn btn-primary" (click)="submitSignUp()">Confirmer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal des détails du stand -->
+  <div class="modal fade" id="detailModal" tabindex="-1" aria-labelledby="detailModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-primary">
+          <h5 class="modal-title" id="detailModalLabel">{{ selectedStandName }}</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>{{ selectedDetail }}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
         </div>
       </div>
     </div>

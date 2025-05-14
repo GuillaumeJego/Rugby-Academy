@@ -1,0 +1,101 @@
+@use 'sass:color';
+@use '../../../../styles.scss' as *;
+
+.container {
+  background-color: $color_background_01;
+  min-height: 100vh;
+
+  .login-card {
+    max-width: 400px;
+    width: 100%;
+    background-color: $color_background_03;
+    border-radius: 1rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+
+    .card-body {
+      padding: 2rem;
+
+      @media (min-width: 768px) {
+        padding: 3rem;
+      }
+
+      .logo {
+        max-width: 120px;
+        height: auto;
+      }
+
+      .text-primary-custom {
+        color: $color_text_03 !important; /* #dd0419 */
+        font-size: 1.5rem;
+        @media (max-width: 576px) {
+          font-size: 1.25rem;
+        }
+      }
+
+      .text-accent {
+        color: $color_text_01;
+        font-size: 0.9rem;
+      }
+
+      .login-form {
+        .form-label {
+          font-weight: 500;
+          color: $color_text_01;
+        }
+
+        .input-group {
+          .input-group-text {
+            background-color: $color_background_02;
+            color: $color_text_01;
+            border: 1px solid $color_border_01;
+            border-right: none;
+          }
+
+          .form-control {
+            border: 1px solid $color_border_01;
+            border-radius: 0.25rem;
+            font-size: 0.9rem;
+            color: $color_text_01;
+            background-color: $color_background_01;
+
+            &:focus {
+              border-color: $color_text_03;
+              box-shadow: 0 0 0 0.2rem rgba($color_text_03, 0.25);
+              outline: none;
+            }
+
+            &::placeholder {
+              color: lighten($color_text_01, 20%);
+            }
+          }
+        }
+
+        .alert {
+          font-size: 0.85rem;
+          padding: 0.5rem;
+          margin-bottom: 1rem;
+        }
+
+        .btn-custom {
+          background-color: $color_action_possible;
+          border: 2px solid $color_border_01;
+          color: $color_text_01;
+          font-weight: bold;
+          transition: all 0.3s ease;
+          padding: 0.75rem;
+          font-size: 1rem;
+
+          &:hover {
+            background-color: $color_text_01;
+            color: white;
+          }
+
+          &:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,5 +1,59 @@
-<form (ngSubmit)="login()">
-    <input type="email" [(ngModel)]="credentials.email" placeholder="Email" required />
-    <input type="password" [(ngModel)]="credentials.password" placeholder="Mot de passe" required />
-    <button type="submit">Se connecter</button>
-</form>
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="card shadow-sm login-card">
+      <div class="card-body p-4 p-md-5">
+        <!-- Logo -->
+        <div class="text-center mb-4">
+          <img src="/assets/images/metana/logo_metana.png" alt="Logo Metana FR" class="logo mb-3" />
+          <h2 class="h4 text-primary-custom">
+            <i class="bi bi-lock-fill me-2"></i> Connexion à Metana FR
+          </h2>
+        </div>
+  
+        <!-- Formulaire -->
+        <form (ngSubmit)="login()" class="login-form">
+          <div class="mb-3">
+            <label for="email" class="form-label text-accent">Email</label>
+            <div class="input-group">
+              <span class="input-group-text"><i class="bi bi-envelope-fill"></i></span>
+              <input
+                type="email"
+                id="email"
+                class="form-control"
+                [(ngModel)]="credentials.email"
+                name="email"
+                placeholder="votre.email@exemple.com"
+                required
+              />
+            </div>
+          </div>
+  
+          <div class="mb-3">
+            <label for="password" class="form-label text-accent">Mot de passe</label>
+            <div class="input-group">
+              <span class="input-group-text"><i class="bi bi-key-fill"></i></span>
+              <input
+                type="password"
+                id="password"
+                class="form-control"
+                [(ngModel)]="credentials.password"
+                name="password"
+                placeholder="••••••••"
+                required
+              />
+            </div>
+          </div>
+  
+          <!-- Message d'erreur -->
+          <div *ngIf="errorMessage" class="alert alert-danger text-center" role="alert">
+            {{ errorMessage }}
+          </div>
+  
+          <!-- Bouton de soumission -->
+          <button type="submit" class="btn btn-custom w-100" [disabled]="isLoading">
+            <span *ngIf="isLoading" class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+            {{ isLoading ? 'Connexion en cours...' : 'Se connecter' }}
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>

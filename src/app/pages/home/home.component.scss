@@ -3,29 +3,29 @@
 
 // Accent colors classes
 .text-accent {
-    color: $color_text_03;
+    color: $color_text_01;
   }
   
   .text-primary-custom {
-    color: $color_text_02;
+    color: $color_text_01;
   }
   
   .btn-custom {
     background-color: $color_action_possible;
-    border: 2px solid $color_border_02;
+    border: 2px solid $color_border_01;
     color: $color_text_01;
     font-weight: bold;
     transition: all 0.3s ease;
   
     &:hover {
-      background-color: $color_text_03;
+      background-color: $color_text_01;
       color: white;
     }
   }
   
   .card-custom {
-    background-color: $color_background_02;
-    color: $color_text_03;
+    background-color: $color_background_03;
+    color: $color_text_01;
     border-radius: 1rem;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
@@ -35,7 +35,7 @@
     }
   
     p {
-      color: $color_level-04;
+      color: $color_level-01;
     }
   }
   

@@ -16,6 +16,8 @@ import { FormsModule } from '@angular/forms';
 })
 export class LoginComponent {
   credentials = { email: '', password: '' };
+  isLoading = false;
+  errorMessage: string | null = null;
 
   constructor(
     private authService: AuthService,
@@ -23,13 +25,21 @@ export class LoginComponent {
   ) {}
 
   login(): void {
+    this.isLoading = true;
+    this.errorMessage = null;
+
     this.authService.login(this.credentials).subscribe({
       next: () => {
+        this.isLoading = false;
         const role = this.authService.getUserRole();
         const redirectUrl = this.router.parseUrl(this.router.url).queryParams['returnUrl'] || '/home';
         this.router.navigate([redirectUrl]);
       },
-      error: (err) => console.error('Erreur de connexion', err)
+      error: (err) => {
+        this.isLoading = false;
+        this.errorMessage = err.error?.message || 'Erreur de connexion. Vérifiez vos identifiants.';
+        console.error('Erreur de connexion', err);
+      }
     });
   }
 }

@@ -14,6 +14,7 @@
 .title-primary {
   h1 {
     font-size: 2.5rem;
+    color: $RugbyAcademy_color_text_04; /* Remplacement de text-primary par $RugbyAcademy_color_text_04 (#dd0419) */
     @media (max-width: 576px) {
       font-size: 1.8rem;
     }
@@ -26,11 +27,20 @@
   }
 }
 
+.bg-primary {
+  background-color: $RugbyAcademy_color_background_03 !important; /* Utilisation de votre charte graphique */
+  color: $RugbyAcademy_color_text_03 !important; /* Même couleur que dans volunteers.component */
+}
+
 .card {
   border-radius: 8px;
   .card-header {
-    background-color: $color_background_03;
-    color: $color_background_01;
+    h2 {
+      font-size: 1.5rem;
+      @media (max-width: 576px) {
+        font-size: 1.25rem;
+      }
+    }
   }
   .card-body {
     .row {
@@ -39,31 +49,67 @@
         &:hover {
           transform: scale(1.02);
         }
+        h3 {
+          font-size: 1.1rem;
+          @media (max-width: 576px) {
+            font-size: 1rem;
+          }
+        }
+        p {
+          font-size: 0.9rem;
+          color: $RugbyAcademy_color_text_01;
+          @media (max-width: 576px) {
+            font-size: 0.85rem;
+          }
+        }
       }
     }
     ul.list-group {
       li.list-group-item {
         border: none;
         padding: 0.5rem 0;
+        font-size: 0.9rem;
+        @media (max-width: 576px) {
+          font-size: 0.85rem;
+        }
+      }
+    }
+    p {
+      font-size: 0.9rem;
+      @media (max-width: 576px) {
+        font-size: 0.85rem;
       }
     }
   }
 }
 
 .btn-success {
-  background-color: $color_button_validation;
-  border: none;
+  background-color: #25D366; /* Couleur officielle WhatsApp */
+  border-color: #25D366;
   &:hover {
-    background-color: color.adjust($color_button_validation, $lightness: -10%);
+    background-color: color.adjust($RugbyAcademy_color_button_validation, $lightness: -10%);
   }
 }
 
 .highlight {
   font-weight: bold;
-  color: $color_text_01;
+  color: $RugbyAcademy_color_text_01;
 }
 
 .highlight-text {
   font-weight: bold;
-  color: $color_button_classic;
+  color: $RugbyAcademy_color_button_classic;
+}
+
+/* Préparation pour les modals si ajoutés ultérieurement */
+.modal-content {
+  .modal-header, .modal-footer {
+    background-color: $RugbyAcademy_color_background_01 !important;
+    color: $RugbyAcademy_color_text_01 !important;
+    box-shadow: 0 0px 40px rgba($RugbyAcademy_color_background_02, 1);
+  }
+  .modal-body {
+    background-color: $RugbyAcademy_color_background_01 !important;
+    color: $RugbyAcademy_color_text_01 !important;
+  }
 }

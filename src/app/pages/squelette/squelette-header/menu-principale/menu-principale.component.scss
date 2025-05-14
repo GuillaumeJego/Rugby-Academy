@@ -2,30 +2,30 @@
 
 // Style de la navbar
 .navbar {
-  background-color: $color_background_03; /* Fond foncé (#031420) */
+  background-color: $RugbyAcademy_color_background_03; /* Fond foncé (#031420) */
   padding: 0.5rem 1rem; /* Espacement interne */
 }
 
 
 // Style des liens de la navbar
 .text {
-  color: $color_text_03; /* Couleur par défaut des liens (#1ebde8) */
+  color: $RugbyAcademy_color_text_03; /* Couleur par défaut des liens (#1ebde8) */
   transition: color 0.3s ease; /* Transition fluide */
 }
 
 .text:hover {
-  color: $color_level_02; /* Couleur au survol (#92a6b2) */
+  color: rgba($RugbyAcademy_color_text_03, 0.5); /* Couleur au survol (#92a6b2) */
 }
 
 // Style pour le lien actif
 .nav-link.active {
-  color: $color_level_04 !important; /* Couleur pour l'onglet actif (#f1f5f6) */
+  color: $RugbyAcademy_color_text_04 !important; /* Couleur pour l'onglet actif (#f1f5f6) */
   font-weight: bold;
 }
 
 // Style pour le bouton toggler (desktop)
 .navbar-toggler {
-  border-color: $color_text_03;
+  border-color: $RugbyAcademy_color_text_03;
 }
 
 .navbar-toggler-icon {
@@ -34,14 +34,14 @@
 
 // Style pour le bouton "Menu" sur mobile
 .menu-toggle {
-  border-color: $color_text_03;
-  color: $color_text_03;
+  border-color: $RugbyAcademy_color_text_03;
+  color: $RugbyAcademy_color_text_03;
   font-weight: bold;
 }
 
 .menu-toggle:hover {
-  background-color: $color_level_05;
-  color: $color_text_01;
+  background-color: $RugbyAcademy_color_level_05;
+  color: $RugbyAcademy_color_text_01;
 }
 
 // Style pour le menu déroulant sur mobile
@@ -51,7 +51,7 @@
   top: 100%; /* Juste en dessous de la navbar */
   left: 0;
   right: 0;
-  background-color: $color_background_03; /* Fond foncé (#031420) */
+  background-color: $RugbyAcademy_color_background_03; /* Fond foncé (#031420) */
   z-index: 1000; /* Au-dessus des autres éléments */
   padding: 1rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -71,17 +71,17 @@
 }
 
 .mobile-menu .nav-link {
-  color: $color_text_03; /* Texte bleu clair (#1ebde8) */
+  color: $RugbyAcademy_color_text_03; /* Texte bleu clair (#1ebde8) */
   text-align: center;
   padding: 0.5rem 0;
 }
 
 .mobile-menu .nav-link:hover {
-  color: $color_level_02; /* Couleur au survol (#92a6b2) */
+  color: $RugbyAcademy_color_level_02; /* Couleur au survol (#92a6b2) */
 }
 
 .mobile-menu .nav-link.active {
-  color: $color_level_04 !important; /* Couleur pour l'onglet actif (#f1f5f6) */
+  color: $RugbyAcademy_color_level_04 !important; /* Couleur pour l'onglet actif (#f1f5f6) */
   font-weight: bold;
 }
 

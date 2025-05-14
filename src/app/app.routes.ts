@@ -13,6 +13,7 @@ import { UnauthorizedComponent } from './core/components/unauthorized/unauthoriz
 import { VolunteersComponent } from './pages/volunteers/volunteers.component';
 import { ClubParty2025Component } from './pages/club-party-2025/club-party-2025.component';
 import { MusicComponent } from './pages/music/music.component';
+import { IncroyablesTalents2025Component } from './pages/incroyables-talents2025/incroyables-talents2025.component';
 
 export const routes: Routes = [
     
@@ -20,12 +21,13 @@ export const routes: Routes = [
     { path: 'players', component: PlayersComponent, data: { role: 'public' }, canActivate: [AuthGuard] },
     { path: 'volunteers', component: VolunteersComponent, data: { role: 'public' }, canActivate: [AuthGuard] },
     { path: 'clubParty2025', component: ClubParty2025Component, data: { role: 'public' }, canActivate: [AuthGuard] },
+    { path: 'incroyablesTalents2025', component: IncroyablesTalents2025Component, data: { role: 'public' }, canActivate: [AuthGuard] },
     { path: 'music', component: MusicComponent, data: { role: 'public' }, canActivate: [AuthGuard] },
-    { path: 'about', component: AboutComponent , data: { role: 'public' }, canActivate: [AuthGuard] },
-    { path: 'events', component: EventsComponent , data: { role: 'public' }, canActivate: [AuthGuard] },
-    { path: 'eventsU6', component: EventsU6Component , data: { role: 'public' }, canActivate: [AuthGuard] },
-    { path: 'timeline', component: TimelineComponent , data: { role: 'public' }, canActivate: [AuthGuard] },
-    { path: 'tests', component: TestsComponent , data: { role: 'public' }, canActivate: [AuthGuard] },
+    // { path: 'about', component: AboutComponent , data: { role: 'public' }, canActivate: [AuthGuard] },
+    // { path: 'events', component: EventsComponent , data: { role: 'public' }, canActivate: [AuthGuard] },
+    // { path: 'eventsU6', component: EventsU6Component , data: { role: 'public' }, canActivate: [AuthGuard] },
+    // { path: 'timeline', component: TimelineComponent , data: { role: 'public' }, canActivate: [AuthGuard] },
+    // { path: 'tests', component: TestsComponent , data: { role: 'public' }, canActivate: [AuthGuard] },
     { path: 'login', component: LoginComponent },
     { path: 'unauthorized', component: UnauthorizedComponent },
     { path: '', redirectTo: '/home', pathMatch: 'full'},

@@ -1,0 +1,234 @@
+<div class="container mt-4 mb-4">
+  <!-- Header -->
+  <div class="text-center mb-4 title-primary">
+    <img src="/assets/images/logos/clubRugby/logo_rugby_dinan.png" alt="Logo Dinan Rugby" class="logo" />
+    <h1 class="display-4" style="color: #dd0419;">
+      <i class="bi bi-star-fill me-2"></i> Incroyable Talent : La Kermesse du Dinan Rugby 2025 !
+    </h1>
+    <p class="lead text-muted">
+      Le samedi, de 17h30 à 18h30, toutes les catégories du club montent sur scène pour un show mémorable ! Devenez gérant et organisez votre catégorie ! 🏉
+    </p>
+  </div>
+  <div class="m-3 text-center">
+    <a href="https://chat.whatsapp.com/KH2fZOdeHtb3IgNdsQPGes" target="_blank" class="btn btn-success">
+      Rejoindre le groupe WhatsApp
+    </a>
+  </div>
+  <iframe 
+    src="https://suno.com/embed/aa18a2aa-2a2f-4885-9422-26f1a3feaf51" 
+    width="100%" 
+    height="240" 
+    class="music-iframe"
+    title="Suno Music Track"
+    frameborder="0"
+    allow="clipboard-write">
+    <a href="https://suno.com/song/aa18a2aa-2a2f-4885-9422-26f1a3feaf51">Listen on Suno</a>
+  </iframe>
+
+  <!-- Concept -->
+  <div class="card shadow-sm mb-4">
+    <div class="card-header bg-primary text-white">
+      <h2 class="h4 mb-0"><i class="bi bi-lightbulb-fill me-2"></i> Le concept de l'Incroyable Talent</h2>
+    </div>
+    <div class="card-body">
+      <p class="text-accent">
+        Le samedi, de 17h30 à 18h30, toutes les catégories du club montent sur scène pour un show mémorable ! Préparez-vous à rire, vibrer et applaudir !
+      </p>
+      <p class="text-accent">
+        Chaque catégorie du Dinan Rugby (de Baby à Féminines) prépare un petit spectacle de 5 à 7 minutes. Sérieux, drôle, délirant ou émouvant, c’est VOUS qui choisissez ! L’important, c’est de montrer l’esprit du club et de s’amuser devant tout le monde.
+      </p>
+      <p class="text-accent">
+        Tout le monde participe, alors laissez libre cours à votre créativité ! Danse, sketch, chanson, mime, numéro de cirque... tout est permis !
+      </p>
+      <p class="call-to-action text-accent mt-3">
+        Alors, à vos idées ! Réunissez votre équipe, vos éducateurs, et concoctez un numéro qui fera vibrer la kermesse !
+      </p>
+    </div>
+  </div>
+
+  <!-- Flashmob -->
+  <div class="card shadow-sm mb-4">
+    <div class="card-header bg-primary text-white">
+      <h2 class="h4 mb-0"><i class="bi bi-music-note-beamed me-2"></i> Ouverture en fanfare : Flash mob des éducateurs</h2>
+    </div>
+    <div class="card-body">
+      <p class="text-accent">
+        Pour lancer l’Incroyable Talent, tous les éducateurs du club vous préparent un flash mob explosif ! Restez à l’affût, les détails (chorégraphie, musique) arrivent bientôt. Préparez-vous à danser avec nous !
+      </p>
+    </div>
+  </div>
+
+  <!-- Jury -->
+  <div class="card shadow-sm mb-4">
+    <div class="card-header bg-primary text-white">
+      <h2 class="h4 mb-0"><i class="bi bi-shield-fill-check me-2"></i> Attention : Un jury intraitable !</h2>
+    </div>
+    <div class="card-body">
+      <p class="text-accent">
+        Pour pimenter le tout, un vrai jury (composé de membres du club et peut-être quelques surprises) jugera vos performances. Pas de pression, c’est pour rire... ou presque ! 😜 Amusez-vous, mais donnez tout pour impressionner !
+      </p>
+    </div>
+  </div>
+
+  <!-- Needs -->
+  <div class="card shadow-sm mb-4">
+    <div class="card-header bg-primary text-white">
+      <h2 class="h4 mb-0"><i class="bi bi-tools me-2"></i> Besoin de matériel ou de musique ?</h2>
+    </div>
+    <div class="card-body">
+      <p class="text-accent">
+        Si votre numéro nécessite du matériel (micros, enceintes, accessoires) ou une musique spécifique, contactez Guillaume Jego au
+        <a href="tel:+33680515999" class="text-accent">06 80 51 59 99</a>.
+        Indiquez vos besoins avant le <strong>31 mai 2025</strong> pour qu’on organise tout !
+      </p>
+      <div class="text-center mt-3">
+        <a href="https://chat.whatsapp.com/KH2fZOdeHtb3IgNdsQPGes" target="_blank" class="btn btn-success">
+          <i class="bi bi-whatsapp me-2"></i> Rejoindre le groupe WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Catégories -->
+  <div class="card shadow-sm mb-4">
+    <div class="card-header bg-primary text-white">
+      <h2 class="h4 mb-0"><i class="bi bi-people-fill me-2"></i> Catégories et gestion</h2>
+    </div>
+    <div class="card-body">
+      <div class="categories-list">
+        <div class="category-item mb-4" *ngFor="let category of categories">
+          <div class="card border-0 shadow-sm">
+            <div class="card-body d-flex flex-column flex-md-row align-items-md-start">
+              <!-- Informations de la catégorie -->
+              <div class="category-info me-md-4 mb-3 mb-md-0">
+                <button
+                  class="category-title-btn"
+                  (click)="openDetailModal(category.name, category.detail)"
+                  title="Détails"
+                >
+                  <i class="{{ category.icon }} me-2"></i>{{ category.name }}
+                  <p>{{ category.description }}</p>
+                </button>
+              </div>
+              <!-- Tableau des créneaux -->
+              <div class="time-slots-table flex-grow-1">
+                <div class="table-responsive">
+                  <table class="table table-bordered table-sm equal-columns">
+                    <thead class="table-dark">
+                      <tr>
+                        <th scope="col">Responsable 1</th>
+                        <th scope="col">Responsable 2</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td *ngFor="let responsable of responsables">
+                          <ng-container *ngIf="getManagerForResponsable(category.name, responsable) as manager">
+                            {{ manager.firstName }} {{ manager.lastName }}
+                            <span *ngIf="manager.phone" class="ms-2 text-muted"> (Tél: {{ manager.phone }})</span>
+                          </ng-container>
+                          <ng-container *ngIf="!getManagerForResponsable(category.name, responsable)">
+                            Disponible
+                            <button
+                              class="btn btn-success btn-sm ms-2"
+                              (click)="openSignUpModal(category.name, responsable)"
+                            >
+                              S’inscrire
+                            </button>
+                          </ng-container>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="mt-4 text-center">
+        <strong>Une idée originale pour votre catégorie ?</strong> Partagez-la avec nous pour enrichir l’Incroyable Talent !
+      </p>
+    </div>
+  </div>
+
+  <!-- Modal d’inscription -->
+  <div class="modal fade" id="signUpModal" tabindex="-1" aria-labelledby="signUpModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-primary">
+          <h5 class="modal-title" id="signUpModalLabel">Inscription gérant</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="managerFirstName" class="form-label">Votre prénom</label>
+              <input
+                type="text"
+                class="form-control"
+                id="managerFirstName"
+                [(ngModel)]="managerFirstName"
+                name="managerFirstName"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="managerLastName" class="form-label">Votre nom de famille</label>
+              <input
+                type="text"
+                class="form-control"
+                id="managerLastName"
+                [(ngModel)]="managerLastName"
+                name="managerLastName"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="managerPhone" class="form-label">Votre numéro de téléphone</label>
+              <input
+                type="tel"
+                class="form-control"
+                id="managerPhone"
+                [(ngModel)]="managerPhone"
+                name="managerPhone"
+              />
+              <small class="form-text text-muted">
+                Votre numéro ne sera pas visible publiquement. Il sera utilisé pour vous contacter si nécessaire et supprimé après l’événement conformément au RGPD.
+              </small>
+            </div>
+            <p><strong>Catégorie :</strong> {{ selectedCategory }}</p>
+            <p><strong>Créneau :</strong> {{ selectedResponsable }}</p>
+            <div class="mt-3 text-center">
+              <a href="https://chat.whatsapp.com/KH2fZOdeHtb3IgNdsQPGes" target="_blank" class="btn btn-success">
+                Rejoindre le groupe WhatsApp
+              </a>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+          <button type="button" class="btn btn-primary" (click)="submitSignUp()">Confirmer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal des détails de la catégorie -->
+  <div class="modal fade" id="detailModal" tabindex="-1" aria-labelledby="detailModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-primary">
+          <h5 class="modal-title" id="detailModalLabel">{{ selectedCategoryName }}</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>{{ selectedDetail }}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

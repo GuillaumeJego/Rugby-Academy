@@ -32,13 +32,14 @@
       <div class="collapse navbar-collapse d-none d-lg-flex" id="navbarNavAltMarkup">
         <div class="navbar-nav ms-auto">
           <!-- <a class="nav-link text" routerLink="/home" routerLinkActive="active">Accueil</a> -->
-          <a class="nav-link text" routerLink="/clubParty2025" routerLinkActive="active">Fête du Club</a>
+          <a class="nav-link text" routerLink="/clubParty2025" routerLinkActive="active">Olympiade</a>
+          <a class="nav-link text" routerLink="/incroyablesTalents2025" routerLinkActive="active">Incroyables Talents</a>
           <!-- <a class="nav-link text" routerLink="/eventsU6" routerLinkActive="active">Animation U6</a> -->
-          <a class="nav-link text" routerLink="/players" routerLinkActive="active">Bénévoles</a>
+          <!-- <a class="nav-link text" routerLink="/players" routerLinkActive="active">Bénévoles</a> -->
           <a class="nav-link text" routerLink="/volunteers" routerLinkActive="active">Bénévoles</a>
           <a class="nav-link text" routerLink="/music" routerLinkActive="active">Musiques</a>
           <a class="nav-link text" routerLink="/home" routerLinkActive="active">A propos</a>
-          <a class="nav-link text" routerLink="/tests" routerLinkActive="active">Tests</a>
+          <!-- <a class="nav-link text" routerLink="/tests" routerLinkActive="active">Tests</a> -->
         </div>
       </div>
   
@@ -46,11 +47,15 @@
       <div class="mobile-menu" [ngClass]="{ 'show': isMenuOpen }">
         <div class="mobile-menu-content">
           <!-- <a class="nav-link text" routerLink="/home" routerLinkActive="active" (click)="toggleMenu()">Accueil</a> -->
-          <a class="nav-link text" routerLink="/events" routerLinkActive="active" (click)="toggleMenu()">Événements</a>
-          <a class="nav-link text" routerLink="/eventsU6" routerLinkActive="active" (click)="toggleMenu()">Animation U6</a>
-          <a class="nav-link text" routerLink="/players" routerLinkActive="active" (click)="toggleMenu()">Bénévoles</a>
+          <!-- <a class="nav-link text" routerLink="/events" routerLinkActive="active" (click)="toggleMenu()">Événements</a> -->
+          <!-- <a class="nav-link text" routerLink="/eventsU6" routerLinkActive="active" (click)="toggleMenu()">Animation U6</a> -->
+          <!-- <a class="nav-link text" routerLink="/players" routerLinkActive="active" (click)="toggleMenu()">Bénévoles</a> -->
+          <a class="nav-link text" routerLink="/clubParty2025" routerLinkActive="active" (click)="toggleMenu()">Olympiade</a>
+          <a class="nav-link text" routerLink="/clubParty2025" routerLinkActive="active" (click)="toggleMenu()">Incroyables Talents</a>
+          <a class="nav-link text" routerLink="/volunteers" routerLinkActive="active" (click)="toggleMenu()">Bénévoles</a>
+          <a class="nav-link text" routerLink="/music" routerLinkActive="active" (click)="toggleMenu()">Musiques</a>
           <a class="nav-link text" routerLink="/home" routerLinkActive="active" (click)="toggleMenu()">A propos</a>
-          <a class="nav-link text" routerLink="/tests" routerLinkActive="active" (click)="toggleMenu()">Tests</a>
+          <!-- <a class="nav-link text" routerLink="/tests" routerLinkActive="active" (click)="toggleMenu()">Tests</a> -->
         </div>
       </div>
     </div>

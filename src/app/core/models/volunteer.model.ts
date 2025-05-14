@@ -1,9 +1,10 @@
 export interface VolunteerModel {
-    id: number;
-    name: string;
-    stand: string;
-    timeSlots: string[];
-    groupe: string;
-    image?: string;
-    explanation: string;
-  }
+  id: number;
+  name: string;
+  lastName: string;
+  stand: string;
+  timeSlots: string[];
+  groupe: string;
+  explanation: string;
+  phoneNumber?: string;
+}

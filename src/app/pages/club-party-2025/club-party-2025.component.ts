@@ -12,6 +12,6 @@ import { RouterModule } from '@angular/router';
 })
 export class ClubParty2025Component {
   joinWhatsApp() {
-    console.log('Redirection vers le groupe WhatsApp');
+    window.open('https://chat.whatsapp.com/FarGcG9Wp49HzxOnpHEugm', '_blank');
   }
 }
